@@ -1,0 +1,4 @@
+# nodeJS files
+node_modules/
+# Secrets
+.env
