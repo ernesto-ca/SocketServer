@@ -25,9 +25,18 @@
             console.log("Lost connection to the Server");
         });
 
-        client.emit('message',{name:'Bren'});
+       
         client.on('message', function(payload){
             console.log("Server say:", payload);
+        });
+
+        client.on('new-message', function(payload){
+            console.log("A client say:", payload);
+        });
+
+        client.on('active-bands', function(payload){
+            console.clear();
+            console.table("The bands from the server are:", payload);
         });
     </script>
 </body>
