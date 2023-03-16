@@ -18,6 +18,11 @@ io.on('connection', client =>{
         console.log("Client Lost");
     });
 
+    client.on('refresh-band',()=>{
+        bands.refreshBand()
+        io.emit('active-bands', bands.getBands());
+    });
+
     // send bands
     io.emit('active-bands', bands.getBands());
 

@@ -17,6 +17,10 @@ class Bands{
         this.bands = this.bands.filter(band => band.id != id)
     }
 
+    refreshBand(){
+        this.bands = []
+    }
+
     voteBand(id=''){
         this.bands = this.bands.map(band =>{
             if(band.id === id){
